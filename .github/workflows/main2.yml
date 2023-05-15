@@ -13,11 +13,11 @@ jobs:
     - name: setup environment
       run: |
       
-        cp -af sources.list /etc/apt/
-        cp -af 99own /etc/apt/apt.conf.d/
-        apt update && apt upgrade -y
-        ln -fs /usr/share/zoneinfo/Asia/Bangkok /etc/localtime && date
-        apt install -f -y git bison flex libxml2 libssl-dev bc zip ccache p7zip default-jre python3 python3-pip wget curl
+        #cp -af sources.list /etc/apt/
+        #cp -af 99own /etc/apt/apt.conf.d/
+        #apt update && apt upgrade -y
+        #ln -fs /usr/share/zoneinfo/Asia/Bangkok /etc/localtime && date
+        #apt install -f -y git bison flex libxml2 libssl-dev bc zip ccache p7zip default-jre python3 python3-pip wget curl
       
         sudo apt-get update --fix-missing
         sudo apt-get install git make bc bison \
@@ -25,7 +25,15 @@ jobs:
           libssl-dev libtfm-dev wget device-tree-compiler \
           ca-certificates python3 python2 binutils \
           binutils-aarch64-linux-gnu binutils-arm-linux-gnueabi \
-          libghc-libyaml-dev libyaml-dev glibc-source \
+          libghc-libyaml-dev libyaml-dev glibc-source 
+          
+        apt-get install gawk bison gcc make -y
+        wget -c https://ftp.gnu.org/gnu/glibc/glibc-2.35.tar.gz
+        tar -zxvf glibc-2.35.tar.gz && cd glibc-2.35
+        mkdir glibc-build && cd glibc-build
+        ../configure --prefix=/opt/glibc
+        make
+        make install
           
     - name: ready compile...
       run: |
