@@ -5,8 +5,8 @@ on:
 jobs:
    build:
     runs-on: ubuntu-latest
-      container:
-      image: ubuntu:jammy-20211029
+      #container:
+      #image: ubuntu:jammy-20211029
 
     steps:
     - name: setting konfigurasi
