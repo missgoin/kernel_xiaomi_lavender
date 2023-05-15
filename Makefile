@@ -834,16 +834,16 @@ KBUILD_CFLAGS += $(call cc-disable-warning, unused-but-set-variable)
 endif
 
 ifeq ($(ld-name),lld)
-#LDFLAGS += -O2
-#endif
+LDFLAGS += -O2
+endif
 ### patch lld for azure clang ###
-ifdef CONFIG_LTO_CLANG
-LDFLAGS += --lto-O2
-else
- LDFLAGS += -O2
-endif
- LDFLAGS += -z norelro
-endif
+#ifdef CONFIG_LTO_CLANG
+#LDFLAGS += --lto-O2
+#else
+ #LDFLAGS += -O2
+#endif
+ #LDFLAGS += -z norelro
+#endif
 
 KBUILD_CFLAGS += $(call cc-disable-warning, unused-const-variable)
 ifdef CONFIG_FRAME_POINTER
