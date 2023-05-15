@@ -1,4 +1,4 @@
-name: Unknown
+name: Kernel
 on:
   workflow_dispatch:
 
