@@ -25,7 +25,7 @@ jobs:
           chmod +x wtc2.sh
           bash wtc2.sh
       shell: bash
-      env:
+     # env:
      #    CHATID: ${{ secrets.CHAT_ID }}
      #    API_BOT: ${{ secrets.BOT_API }}
      #    TYPE_KERNEL: ${{ secrets.EZA }}
