@@ -21,7 +21,7 @@ jobs:
           libghc-libyaml-dev libyaml-dev glibc-source \
     - name: ready compile...
       run: |
-          curl https://raw.githubusercontent.com/missgoin/main/hub/wtc2.sh > wtc2.sh
+          curl https://github.com/missgoin/hub/blob/main/wtc2.sh > wtc2.sh
           chmod +x wtc2.sh
           bash wtc2.sh
       shell: bash
