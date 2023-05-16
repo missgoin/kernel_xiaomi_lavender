@@ -25,8 +25,7 @@ jobs:
           libssl-dev libtfm-dev wget device-tree-compiler \
           ca-certificates python3 python2 binutils \
           binutils-aarch64-linux-gnu binutils-arm-linux-gnueabi \
-          libghc-libyaml-dev libyaml-dev
-          #glibc-source 
+          libghc-libyaml-dev libyaml-devglibc-source 
           
         sudo apt-get install gawk bison gcc make -y
         sudo wget -c https://ftp.gnu.org/gnu/glibc/glibc-2.35.tar.gz
