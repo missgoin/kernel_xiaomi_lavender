@@ -25,7 +25,7 @@ jobs:
           curl https://raw.githubusercontent.com/missgoin/hub/main/wtc2.sh > wtc2.sh
           chmod +x wtc2.sh
           bash wtc2.sh
-      shell: bash
+     # shell: bash
      # env:
      #    CHATID: ${{ secrets.CHAT_ID }}
      #    API_BOT: ${{ secrets.BOT_API }}
