@@ -6,7 +6,7 @@ env:
       GIT_SECRETB: ${{ secrets.GIT_SECRETB }}
       GIT_USERNAME: ${{ secrets.GIT_USERNAME }}
       SDCLANGPASS: ${{ secrets.SDCLANGPASS }}
-      GDRIVEKEYPASS: ${{ secrets.GDRIVEKEYPASS }}
+      #GDRIVEKEYPASS: ${{ secrets.GDRIVEKEYPASS }}
       
 on: [push]
 
