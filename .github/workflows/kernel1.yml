@@ -21,9 +21,9 @@ jobs:
           libghc-libyaml-dev libyaml-dev glibc-source \
     - name: ready compile...
       run: |
-          curl https://raw.githubusercontent.com/missgoin/hub/main/lavender1.sh > lavender1.sh
-          chmod +x lavender1.sh
-          bash lavender1.sh
+          curl https://raw.githubusercontent.com/missgoin/hub/main/lavender2.sh > lavender2.sh
+          chmod +x lavender2.sh
+          bash lavender2.sh
      # shell: bash
      # env:
      #    CHATID: ${{ secrets.CHAT_ID }}
