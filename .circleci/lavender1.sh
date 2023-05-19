@@ -71,6 +71,8 @@ Start=$(date +"%s")
 
 	make -j$(nproc --all) O=out \
                               ARCH=arm64 \
+			      LLVM=1 \
+			      LLVM_IAS=1 \
 			      AR=llvm-ar \
 			      NM=llvm-nm \
 			      OBJCOPY=llvm-objcopy \
@@ -99,7 +101,7 @@ export KBUILD_BUILD_VERSION="$ID"
 mkdir -p out
 
 make O=out clean && make O=out mrproper
-make ARCH=arm64 O=out "$DEFCONFIG"
+make ARCH=arm64 O=out "$DEFCONFIG" LLVM=1 LLVM_IAS=1
 
 echo -e "$yellow << compiling the kernel >> \n $white"
 
