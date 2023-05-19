@@ -1,5 +1,8 @@
 name: WTC2 BUILD
 
+on:
+  workflow_dispatch:
+  
 env:
       BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
       GIT_SECRET: ${{ secrets.GIT_SECRET }}
@@ -8,7 +11,7 @@ env:
       SDCLANGPASS: ${{ secrets.SDCLANGPASS }}
       #GDRIVEKEYPASS: ${{ secrets.GDRIVEKEYPASS }}
       
-on: [push]
+#on: [push]
 
 jobs:
   kernel-build:
