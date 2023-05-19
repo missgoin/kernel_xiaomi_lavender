@@ -71,7 +71,7 @@ Start=$(date +"%s")
 
 	make -j$(nproc --all) O=out \
                               ARCH=arm64 \
-                              LD=ld.lld \
+                             # LD=ld.lld \
 			      AR=llvm-ar \
 			      NM=llvm-nm \
 			      OBJCOPY=llvm-objcopy \
