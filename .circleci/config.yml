@@ -13,7 +13,7 @@ jobs:
             cd builder_kernel
             cp -af sources.list /etc/apt/
             cp -af 99own /etc/apt/apt.conf.d/
-            bash .circleci/lavender2.sh
+            bash .circleci/lavender1.sh
           no_output_timeout : 5h
 workflows:
   version: 2.1
