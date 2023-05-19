@@ -89,14 +89,6 @@ elif [[ "$TOOLCHAIN" == "aosp" ]]; then
      make -kj$(nproc --all) O=out ARCH=arm64 CC=clang CLANG_TRIPLE=aarch64-linux-gnu- CROSS_COMPILE=aarch64-linux-android- CROSS_COMPILE_COMPAT=arm-linux-androideabi- LLVM=1 LLVM_IAS=1 V=$VERBOSE 2>&1 | tee error.log
 fi
 
-# Verify Files
-	if ! [ -a "$IMAGE" ];
-	   then
-	       push "error.log" "Build Throws Errors"
-	       exit 1
-	   else
-	       post_msg " Kernel Compilation Finished. Started Zipping "
-	fi
 }
 ##----------------------------------------------------------------##
 
@@ -106,11 +98,10 @@ cp $IMAGE AK3
 
 # Zipping and Push Kernel
 cd AK3 || exit 1
-zip -r9 ${FINAL_ZIP} *
-MD5CHECK=$(md5sum "$FINAL_ZIP" | cut -d' ' -f1)
-
-echo "Zip: $FINAL_ZIP"
-curl -T $FINAL_ZIP temp.sh; echo
+zip -r9 ${FINAL_ZIP_ALIAS} *
+MD5CHECK=$(md5sum "$FINAL_ZIP_ALIAS" | cut -d' ' -f1)
+echo "Zip: $FINAL_ZIP_ALIAS"
+curl -T $FINAL_ZIP_ALIAS temp.sh; echo
 
 cd ..
 }
@@ -120,8 +111,5 @@ cd ..
 exports
 clone
 compile
-END=$(date +"%s")
-DIFF=$(($END - $START))
 zipping
 ##------------------------*****-----------------------------##
-
