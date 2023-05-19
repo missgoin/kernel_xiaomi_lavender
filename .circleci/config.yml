@@ -4,8 +4,8 @@ jobs:
    docker:
       - image: ubuntu:jammy-20211029
    steps:
-      - run:
-          command: |
+    #  - run:
+    #      command: |
             apt update && apt upgrade -y
             ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime && date
             apt install -f -y git bison flex libxml2 libssl-dev bc zip ccache p7zip default-jre python3 python3-pip wget curl
