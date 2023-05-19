@@ -19,9 +19,12 @@ echo -e "$green << setup dirs >> \n $white"
 
 # With that setup , the script will set dirs and few important thinks
 
-MY_DIR="${BASH_SOURCE%/*}"
-if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
+#MY_DIR="${BASH_SOURCE%/*}"
+#if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
  
+MY_DIR="$(pwd)"
+#IMAGE=$(pwd)/out/arch/arm64/boot/Image.gz-dtb
+
 # MIUI = High Dimens
 # OSS = Low Dimens
 
